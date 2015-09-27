@@ -1,0 +1,13 @@
+<div class="slider">
+    <ul class="slides">
+        {% for slide in page.slider %}
+      <li>
+        <img src="{{ slide }}"> <!-- random image -->
+        <div class="caption {{ page.alignment[forloop.index0] }}-align">
+          <h3>{{ page.caption[forloop.index0] }}</h3>
+          <h5 class="light grey-text text-lighten-3">{{ page.alt[forloop.index0] }}</h5>
+        </div>
+      </li>
+        {% endfor %}
+    </ul>
+  </div>

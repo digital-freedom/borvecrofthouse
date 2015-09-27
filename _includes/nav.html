@@ -1,0 +1,24 @@
+<div class="navbar-fixed white">
+<nav>
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo">The Croft House</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></i></a>
+      <ul class="right hide-on-med-and-down">
+        {% for nav_item in site.data.nav %}
+            <li {% if page.url == nav_item.link %} class="active" {% endif %}>
+            <a href="{{ nav_item.link }}"><strong class="blue-text">{{ nav_item.name }}</strong></a>
+            </li>
+        {% endfor %}
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        {% for nav_item in site.data.nav %}
+        {% if nav_item.menu == " main" %}
+            <li {% if page.url == nav_item.link %} class="active" {% endif %}>
+            <a href="{{ nav_item.link }}"><strong>{{ nav_item.name }}</strong></a>
+            </li>
+        {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+</nav>
+</div>

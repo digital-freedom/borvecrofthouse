@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html lang="en" prefix="og:  http://ogp.me/ns#">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% if page.title %}{{ page.title }}{% else %}{{ site.name }}{% endif %}</title>
+        <meta name="description"
+      content={% if page.description %}"{{ page.description }}"{% else %}"{{ site.description }}"{% endif %}>
+        <link href='https://fonts.googleapis.com/css?family=Montserrat:700|Raleway' rel='stylesheet' type='text/css'>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="/css/crofthouse.css"  media="screen,projection"/>
+        {% if page.calendar %}
+        <link type="text/css" rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.4.0/fullcalendar.min.css"  media="screen,projection"/>
+        {% endif %}
+    </head>

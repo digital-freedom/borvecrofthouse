@@ -1,0 +1,98 @@
+    {% include head.html %}
+<body>
+    {% include nav.html %}
+    <section id="top" class="row scrollspy">
+        {% include banner.html %}
+    </section>
+    <section class="row">
+        {% include intro.html %}
+    </section>
+    {% if page.calendar %}
+    <section class="row">
+        {% include calendar.html %}
+    </section>
+    {% endif %}
+    {% if page.slider %}
+    <section class="row">
+        {% include slider.html %}
+    </section>
+    {% endif %}
+    <section>
+        {% include outro.html %}
+    </section>
+    {% if page.calendar %}
+    <div class="row">
+        <section class="container flow-text">
+            <div class="col s12 m6">
+                {{ content }}
+            </div>
+            <div class="col s12 m6">
+                <h5>Contact us</h5>
+                <p>Please get in touch if you are interested in booking The Croft House, or even if you just have a question.</p>
+                <form name="simple_form" id="simple_form" action="https://getsimpleform.com/messages?form_api_token={{ site.form }}" enctype="multipart/form-data" method="post">
+                    <div id="simple_form-name">
+                        <label for="simple_form-field-name">Name</label>
+                        <input type="text" id="simple_form-field-name" name="name" class="" placeholder="Please add your name" value="" required="required"/>
+                    </div>
+                    <div id="simple_form-email">
+                        <label for="simple_form-field-email">Email</label>
+                        <input type="email" id="simple_form-field-email" name="email" class="" placeholder="Please add your email" value="" required="required"/>
+                    </div>
+                    <div id="simple_form-message">
+                        <label for="simple_form-field-message">Message</label>
+                        <textarea rows="7" id="simple_form-field-message" name="message" class="materialize-textarea" placeholder="Please add your message" required="required"></textarea>
+                    </div>
+                    <div id="simple_form-submit">
+                        <button id="simple_form-field-submit" name="submit" class="waves-effect waves-light btn blue">Send</button>
+                            </div>
+
+        <div id="simple_form-success"></div>
+    </form>
+
+    <script>$(function(){$('#simple_form').submit(function(){$.ajax({dataType:'jsonp',url:"http://getsimpleform.com/messages/ajax?form_api_token=21a09d10d78ca264d1e2b3aa1f8f8270",data:{name:$("#simple_form-field-name").val(),email:$("#simple_form-field-email").val(),message:$("#simple_form-field-message").val(),}}).done(function(){$('#simple_form-success').html("<div class='alert alert-success'>");$('#simple_form-success > .alert-success').append("<strong>Thank you - your message has been sent.</strong>");$('#simple_form-success > .alert-success').append('</div>');$('#simple_form').trigger("reset");});return false;})});</script>
+        <p class="small">Please ensure your email address is correct, it is the only method we have to respond to your request.</p>
+</div>
+            </div>
+        </section>
+    </div>
+    <div class="row">
+        <div class="container">
+            {% include terms.html %}
+        </div>
+    </div>
+    {% else %}
+    <section class="container flow-text">
+        {{ content }}
+    </section>
+    {% endif %}
+    {% if page.twitter %}
+    <div class="section container">
+        <div class="divider"></div>
+    </div>
+    <div class="row">
+        <section class="container flow-text">
+            <div class="col s12 m6">
+                {{ page.twitter }}
+                <p class="flow-text">Or keep an eye on our <a href="https://www.facebook.com/The-Croft-House-498538636966670">Facebook</a> Page to keep up to date with the house.</p>
+            </div>
+            <div class="col s12 m6">
+                <a class="twitter-timeline" data-chrome="nofooter noscrollbar noheader transparent" href="https://twitter.com/LinuxAdvice/lists/crofthouse" data-widget-id="590168616378769408">Tweets from https://twitter.com/LinuxAdvice/lists/crofthouse</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+            </div>
+        </section>
+    </div>
+    {% endif %}
+    <section class="center">
+        <a href="{{ page.bottom-button-url }}"><h5>{{ page.bottom-button-text }}</h5></a><br>
+    </section>
+    <footer class="section blue darken-2">
+        <div class="row center">
+            <a href="#top" class="btn-floating btn-large waves-effect waves-light white"><i style="font-size: 60px" class="material-icons blue-text">keyboard_arrow_up</i></a>
+        </div>
+        <div class="section center white-text">
+            <a class="white-text" href="http://digitalfreedom.me">Digital Freedom</a> built my website with <i class="tiny material-icons">code</i> and loads of <i class="tiny material-icons">favorite_border</i>
+        </div>
+    </footer>
+    {% include commonjs.html %}
+</body>
+</html>
